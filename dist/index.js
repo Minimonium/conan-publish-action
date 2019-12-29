@@ -4037,19 +4037,22 @@ module.exports = require("assert");
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
 };
 exports.__esModule = true;
-var core_1 = __importDefault(__webpack_require__(470));
-var github_1 = __importDefault(__webpack_require__(469));
+var core = __importStar(__webpack_require__(470));
+var github = __importStar(__webpack_require__(469));
 try {
-    var payload = JSON.stringify(github_1["default"].context.payload, undefined, 2);
+    var payload = JSON.stringify(github.context.payload, undefined, 2);
     console.log("The event payload: " + payload);
-    console.log(github_1["default"].context);
 }
 catch (error) {
-    core_1["default"].setFailed(error.message);
+    core.setFailed(error.message);
 }
 
 
