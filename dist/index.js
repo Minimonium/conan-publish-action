@@ -34,7 +34,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(104);
+/******/ 		return __webpack_require__(362);
 /******/ 	};
 /******/
 /******/ 	// run startup
@@ -488,24 +488,6 @@ module.exports = windowsRelease;
 /***/ (function(module) {
 
 module.exports = require("os");
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
-
-const core = __webpack_require__(470);
-const github = __webpack_require__(469);
-
-try {
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`)
-
-  console.log(github.context)
-} catch (error) {
-  core.setFailed(error.message);
-}
-
 
 /***/ }),
 
@@ -4047,6 +4029,29 @@ function authenticationRequestError(state, error, options) {
 /***/ (function(module) {
 
 module.exports = require("assert");
+
+/***/ }),
+
+/***/ 362:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+exports.__esModule = true;
+var core_1 = __importDefault(__webpack_require__(470));
+var github_1 = __importDefault(__webpack_require__(469));
+try {
+    var payload = JSON.stringify(github_1["default"].context.payload, undefined, 2);
+    console.log("The event payload: " + payload);
+    console.log(github_1["default"].context);
+}
+catch (error) {
+    core_1["default"].setFailed(error.message);
+}
+
 
 /***/ }),
 

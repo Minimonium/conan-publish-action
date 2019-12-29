@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "package": "ncc build index.js -o dist"
+    "build": "tsc index.ts --esModuleInterop --outDir build",
+    "package": "tsc index.ts --esModuleInterop --outDir build && ncc build build/index.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5"
+    "@zeit/ncc": "^0.20.5",
+    "typescript": "^3.7.4"
   }
 }
