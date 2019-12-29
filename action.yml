@@ -3,7 +3,7 @@ author: Alexandr Timofeev <alexandr.p.timofeev@gmail.com>
 description: An action to automatically create pull requests for the https://github.com/conan-io/conan-center-index
 
 inputs:
-  github_token:
+  token:
     description: GitHub token secret
     required: true
 
