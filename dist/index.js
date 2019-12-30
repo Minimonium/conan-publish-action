@@ -18811,17 +18811,19 @@ var request_promise_1 = __webpack_require__(99);
 try {
     var tarball_url_1 = github.context.payload.release.tarball_url;
     console.log("The tarball: " + tarball_url_1);
-    var shasum_1 = crypto_1.createHash('sha256');
     var options = {
         uri: tarball_url_1,
         method: 'GET',
-        encoding: 'binary',
+        gzip: true,
+        resolveWithFullResponse: true,
+        encoding: null,
         headers: { 'User-Agent': 'Conan-Publish-Action' }
     };
     request_promise_1.get(options).then(function (body) {
-        shasum_1.update(body);
-        var hash = shasum_1.digest('hex');
-        console.log(tarball_url_1 + ' ' + hash);
+        var shasum = crypto_1.createHash('sha256');
+        shasum.update(body);
+        var hash = shasum.digest('hex');
+        console.log(hash + " " + tarball_url_1);
     });
 }
 catch (error) {
