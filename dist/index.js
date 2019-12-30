@@ -18809,20 +18809,16 @@ var github = __importStar(__webpack_require__(469));
 var crypto_1 = __webpack_require__(417);
 var request_promise_1 = __webpack_require__(99);
 try {
-    var tarball_url_1 = github.context.payload.release.tarball_url;
-    console.log("The tarball: " + tarball_url_1);
+    var tarball_url = github.context.payload.release.tarball_url;
+    console.log('Tarball:', tarball_url);
     var options = {
-        uri: tarball_url_1,
-        method: 'GET',
-        gzip: true,
-        encoding: null,
+        uri: tarball_url,
         headers: { 'User-Agent': 'Conan-Publish-Action' }
     };
-    request_promise_1.get(options).then(function (body) {
-        var shasum = crypto_1.createHash('sha256');
-        shasum.update(body);
-        var hash = shasum.digest('hex');
-        console.log(hash + " " + tarball_url_1);
+    var hasher = crypto_1.createHash('sha256');
+    hasher.setEncoding('hex');
+    request_promise_1.get(options).pipe(hasher).on('finish', function () {
+        console.log('Hash:', hasher.read());
     });
 }
 catch (error) {
