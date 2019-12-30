@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc index.ts --esModuleInterop --outDir build",
-    "package": "tsc index.ts --esModuleInterop --outDir build && ncc build build/index.js -o dist"
+    "package": "npm run build && ncc build build/index.js -o dist"
   },
   "repository": {
     "type": "git",

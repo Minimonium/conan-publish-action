@@ -4048,8 +4048,8 @@ exports.__esModule = true;
 var core = __importStar(__webpack_require__(470));
 var github = __importStar(__webpack_require__(469));
 try {
-    var payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log("The event payload: " + payload);
+    var tarball_url = github.context.payload.release.tarball_url;
+    console.log("The tarball: " + tarball_url);
 }
 catch (error) {
     core.setFailed(error.message);
