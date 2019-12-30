@@ -18812,13 +18812,10 @@ try {
     var tarball_url_1 = github.context.payload.release.tarball_url;
     console.log('The tarball: ${tarball_url}');
     var shasum_1 = crypto_1.createHash('sha256');
-    request_promise_1.get({ uri: tarball_url_1 })
-        .then(function (body) {
+    request_promise_1.get({ uri: tarball_url_1 }).then(function (body) {
         shasum_1.update(body);
         var hash = shasum_1.digest('hex');
         console.log(tarball_url_1 + ' ' + hash);
-    })["catch"](function (e) {
-        console.log('error!');
     });
 }
 catch (error) {
