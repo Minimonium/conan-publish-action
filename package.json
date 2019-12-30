@@ -26,9 +26,11 @@
     "@actions/github": "^2.0.0",
     "crypto": "^1.0.1",
     "fs": "0.0.1-security",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
   },
   "devDependencies": {
+    "@types/request-promise": "^4.1.45",
     "@zeit/ncc": "^0.20.5",
     "typescript": "^3.7.4"
   }
