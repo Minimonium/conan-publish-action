@@ -11,7 +11,6 @@ try {
     uri: tarball_url,
     method: 'GET',
     gzip: true,
-    resolveWithFullResponse: true,
     encoding: null,
     headers: {'User-Agent': 'Conan-Publish-Action'},
   };

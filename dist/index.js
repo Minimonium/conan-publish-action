@@ -18815,7 +18815,6 @@ try {
         uri: tarball_url_1,
         method: 'GET',
         gzip: true,
-        resolveWithFullResponse: true,
         encoding: null,
         headers: { 'User-Agent': 'Conan-Publish-Action' }
     };
