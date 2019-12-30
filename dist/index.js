@@ -18810,10 +18810,12 @@ var crypto_1 = __webpack_require__(417);
 var request_promise_1 = __webpack_require__(99);
 try {
     var tarball_url_1 = github.context.payload.release.tarball_url;
-    console.log('The tarball: ${tarball_url}');
+    console.log("The tarball: " + tarball_url_1);
     var shasum_1 = crypto_1.createHash('sha256');
     var options = {
         uri: tarball_url_1,
+        method: 'GET',
+        encoding: 'binary',
         headers: { 'User-Agent': 'Conan-Publish-Action' }
     };
     request_promise_1.get(options).then(function (body) {
