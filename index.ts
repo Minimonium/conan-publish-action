@@ -10,6 +10,8 @@ try {
   let shasum = createHash('sha256');
   const options = {
     uri: tarball_url,
+    method: 'GET',
+    encoding: 'binary',
     headers: {'User-Agent': 'Conan-Publish-Action'},
   };
   get(options).then(body => {
