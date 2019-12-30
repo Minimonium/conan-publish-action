@@ -8,7 +8,11 @@ try {
   console.log('The tarball: ${tarball_url}');
 
   let shasum = createHash('sha256');
-  get({uri: tarball_url}).then(body => {
+  const options = {
+    uri: tarball_url,
+    headers: {'User-Agent': 'Conan-Publish-Action'},
+  };
+  get(options).then(body => {
     shasum.update(body);
     const hash = shasum.digest('hex');
     console.log(tarball_url + ' ' + hash);
