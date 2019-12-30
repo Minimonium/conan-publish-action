@@ -5,7 +5,7 @@ import {get} from 'request-promise';
 
 try {
   const tarball_url = github.context.payload.release.tarball_url;
-  console.log('The tarball: ${tarball_url}');
+  console.log(`The tarball: ${tarball_url}`);
 
   let shasum = createHash('sha256');
   const options = {
