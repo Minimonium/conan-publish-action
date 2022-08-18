@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Minimonium/conan-publish-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.0",
+    "@actions/core": "^1.9.1",
     "@actions/exec": "^1.0.1",
     "@actions/github": "^2.0.0",
     "crypto": "^1.0.1",
